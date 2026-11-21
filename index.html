@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linda Sharaf | Front-end and full-stack developer</title>
+  <meta name="description" content="Linda Sharaf, Computer Science student at An-Najah National University. Front-end and full-stack developer working on AI-assisted SaaS products. Open to internships and junior roles.">
+  <link rel="canonical" href="https://lindasharaf.github.io/">
+  <meta name="theme-color" content="#6B0F24">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Linda Sharaf | Front-end and full-stack developer">
+  <meta property="og:description" content="Building Brightora, an AI-powered CRM, and researching honest uncertainty in wireless sensor tracking.">
+  <meta property="og:url" content="https://lindasharaf.github.io/">
+  <meta property="og:image" content="https://lindasharaf.github.io/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/BodoniModa-Italic.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to content</a>
+
+  <header class="nav">
+    <a class="nav-name" href="#top">Linda Sharaf</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="hero-text">
+        <p class="hero-lead">I build web products front to back, and the front is where I care most. Right now that means Brightora, an AI-powered CRM, and a research paper on honest uncertainty in sensor tracking.</p>
+        <p class="hero-meta">Final-year Computer Science, An-Najah National University. Graduating January 2027. Open to internships and junior roles.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#work">See my work</a>
+          <a class="btn btn-line" href="assets/Linda-Sharaf-CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <h1 id="hero-name" class="hero-name"><span>Linda</span><span>Sharaf</span></h1>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <h2 class="section-title">Selected work</h2>
+
+      <article class="project project-feature">
+        <div class="project-head">
+          <h3>Brightora</h3>
+          <p class="project-kind">Capstone project, 2026 to 2027. In development.</p>
+        </div>
+        <div class="project-body">
+          <p>An AI-powered CRM built as a multi-tenant SaaS. It targets two problems sales teams keep running into: CRM screens that are too complex to use day to day, and customer mood and account health that nobody tracks until a deal is already lost.</p>
+          <ul class="facts">
+            <li>Each company's data is isolated down to the database, with PostgreSQL row-level security and role-based permissions on every action.</li>
+            <li>AI reads conversations to track customer sentiment and account health, and an AI sales manager explains why an employee's deals went well or badly.</li>
+            <li>An embeddable chat widget lets customers talk to the business from its own website.</li>
+            <li>An MCP interface lets outside AI assistants work inside the CRM, limited to what the key owner's role allows.</li>
+          </ul>
+          <p class="stack">Node.js, PostgreSQL, vanilla JavaScript, Claude API, Model Context Protocol</p>
+          <p class="note">The code and a public demo will be published after the capstone presentation.</p>
+        </div>
+      </article>
+
+      <article class="project project-research">
+        <div class="project-head">
+          <h3>Anchors as Live Calibrators</h3>
+          <p class="project-kind">Research paper, Wireless Networks course, 2026</p>
+        </div>
+        <figure class="diagram" aria-labelledby="diagram-cap">
+          <svg viewBox="0 0 320 320" role="img" aria-label="A grid of sixteen anchor nodes. One anchor is localized from the others to measure live error, and that error sizes a circle around the tracked target.">
+            <g class="grid-anchors">
+              <circle cx="40" cy="40" r="6"/><circle cx="120" cy="40" r="6"/><circle cx="200" cy="40" r="6"/><circle cx="280" cy="40" r="6"/>
+              <circle cx="40" cy="120" r="6"/><circle cx="200" cy="120" r="6"/><circle cx="280" cy="120" r="6"/>
+              <circle cx="40" cy="200" r="6"/><circle cx="120" cy="200" r="6"/><circle cx="200" cy="200" r="6"/><circle cx="280" cy="200" r="6"/>
+              <circle cx="40" cy="280" r="6"/><circle cx="120" cy="280" r="6"/><circle cx="200" cy="280" r="6"/><circle cx="280" cy="280" r="6"/>
+            </g>
+            <g class="self-test">
+              <line x1="120" y1="120" x2="40" y2="40"/><line x1="120" y1="120" x2="200" y2="40"/>
+              <line x1="120" y1="120" x2="40" y2="200"/><line x1="120" y1="120" x2="200" y2="200"/>
+              <circle class="anchor-test" cx="120" cy="120" r="8"/>
+              <circle class="anchor-guess" cx="131" cy="112" r="3"/>
+            </g>
+            <g class="target">
+              <circle class="ring" cx="236" cy="236" r="30"/>
+              <circle class="dot" cx="236" cy="236" r="5"/>
+            </g>
+          </svg>
+          <figcaption id="diagram-cap">Every second, each anchor is located from the others. Its known position turns that into a real error measurement, and those errors size the circle around the target.</figcaption>
+        </figure>
+        <div class="project-body">
+          <p>Sensor networks that track a moving target usually report a confidence region, but that region quietly breaks when walls appear or signals drift. My method uses the network's own anchor nodes as live calibrators, so the region stays honest without ever knowing where the target really is.</p>
+          <p>In 600 simulation runs, when walls appeared or signals drifted, the standard approaches contained the target only 2 to 15% of the time against a 90% goal. This method kept at least 97%, and it flagged a faulty anchor within 4 seconds in every run, with no false alarms.</p>
+          <p class="stack">Python, NumPy, SciPy, Matplotlib, LaTeX, conformal prediction, Kalman filtering</p>
+          <div class="links">
+            <a href="assets/Anchors-as-Live-Calibrators.pdf" download>Download the paper (PDF)</a>
+            <a href="https://github.com/lindasharaf/anchor-calibrated-wsn-tracking" target="_blank" rel="noopener">Simulation code on GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-small">
+        <div class="project-head">
+          <h3>My first website</h3>
+          <p class="project-kind">Spring semester 2025</p>
+        </div>
+        <div class="project-body">
+          <p>A rebuilt version of the first portfolio I made in Spring 2025, in its original style. It covers four earlier team projects: SQL injection practice in WebGoat, network scanning with Nmap, a machine learning spam classifier, and a database design for a multi-branch clothing store.</p>
+          <p class="stack">HTML, CSS, JavaScript</p>
+          <div class="links">
+            <a href="https://lindasharaf.github.io/first-portfolio/" target="_blank" rel="noopener">View the live site</a>
+            <a href="https://github.com/lindasharaf/first-portfolio" target="_blank" rel="noopener">Code on GitHub</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <ol class="timeline">
+        <li>
+          <p class="when">Jul to Aug 2026</p>
+          <div>
+            <h3>Power Platform and Software Developer Intern</h3>
+            <p class="where">Fratello Software House</p>
+            <p>Customized Microsoft Dynamics 365 and Dataverse solutions with JavaScript and FetchXML, and configured Power Platform features such as Business Process Flows to streamline everyday operations.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">Jul 2024 to Jul 2025</p>
+          <div>
+            <h3>Sales and Marketing Specialist</h3>
+            <p class="where">Mediphora</p>
+            <p>Explained procedures and pricing to patients, and worked with the marketing team on materials presenting hospital facilities.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">Aug to Sep 2024</p>
+          <div>
+            <h3>Full-Stack Developer, internship program</h3>
+            <p class="where">EarTech Information Technology</p>
+            <p>Built Python games using object-oriented design, designed the front end of a music app in HTML, CSS and JavaScript, and connected it to a SQL database.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>I started studying software engineering at Istinye University in Istanbul, then moved home to Nablus to finish a Computer Science degree at An-Najah National University.</p>
+          <p>I work across the full stack and in Microsoft Power Platform, but I am happiest on the front end, where a product either makes sense to people or it doesn't. I use AI tools as part of how I build, and I like building SaaS products that someone could actually run a business on.</p>
+          <p>I speak Arabic and Turkish natively, English fluently, and Spanish at B1 level.</p>
+        </div>
+        <dl class="skills">
+          <div><dt>Front end</dt><dd>HTML, CSS, JavaScript, Next.js, responsive and accessible UI, Figma</dd></div>
+          <div><dt>Back end and data</dt><dd>Node.js, Python, FastAPI, REST APIs, SQL, PostgreSQL, Supabase</dd></div>
+          <div><dt>Microsoft</dt><dd>Power Platform, Dynamics 365, Dataverse, FetchXML</dd></div>
+          <div><dt>AI</dt><dd>Claude API, Model Context Protocol, AI-assisted development</dd></div>
+          <div><dt>Also</dt><dd>C, C++, Git and GitHub, LaTeX, NumPy, SciPy, Matplotlib</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2 class="section-title">Education and certificates</h2>
+      <div class="edu">
+        <div class="edu-col">
+          <div class="edu-item">
+            <h3>BSc Computer Science</h3>
+            <p class="where">An-Najah National University, Nablus</p>
+            <p class="when">2024 to January 2027 (expected)</p>
+          </div>
+          <div class="edu-item">
+            <h3>Software Engineering, first two years</h3>
+            <p class="where">Istinye University, Istanbul</p>
+            <p class="when">2022 to 2024</p>
+          </div>
+        </div>
+        <div class="edu-col">
+          <div class="edu-item">
+            <h3>Coding and Cybersecurity Internship Bootcamp</h3>
+            <p class="where">EarTech Information Technology, certificate of achievement</p>
+            <p class="when">August 2024. <a href="assets/EarTech-certificate.pdf" target="_blank" rel="noopener">View certificate</a></p>
+          </div>
+          <div class="edu-item">
+            <h3>Learn C++</h3>
+            <p class="where">Codecademy, course completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2 class="section-title">Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p>I'm looking for internships and junior front-end or full-stack roles. Send a message here or write to me directly.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:lindasharaf@hotmail.com">lindasharaf@hotmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/linda-sharaf" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/lindasharaf" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="assets/Linda-Sharaf-CV.pdf" download>Download CV (PDF)</a></li>
+          </ul>
+        </div>
+        <form class="form" id="contact-form" action="https://formsubmit.co/lindasharaf@hotmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from your portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name">
+          <label for="f-email">Your email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="5" required></textarea>
+          <button class="btn btn-solid" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Linda Sharaf, Nablus, Palestine</p>
+    <p>Plain HTML, CSS and JavaScript, hosted on GitHub Pages.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
